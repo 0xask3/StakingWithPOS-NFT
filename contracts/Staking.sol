@@ -233,7 +233,7 @@ contract Staking is Ownable, ERC721 {
      * @dev claim accumulated  reward for a single pool
      *
      * @param {_pid} pool identifier
-     8 @param {_nftId} NFT id of user
+     8 @param {_nftId} NFT id of owner
      *
      * @return {bool} status of claim
      */
@@ -274,6 +274,7 @@ contract Staking is Ownable, ERC721 {
      *
      * @param {_pid} id of the pool
      * @param {_amount} amount to be unstaked
+     * @param {_nftId} NFT id of owner
      *
      * @return {bool} Status of stake
      *
@@ -326,6 +327,12 @@ contract Staking is Ownable, ERC721 {
 
         emit Claim(_addr, amount);
     }
+
+    /**
+     *
+     * @dev View function to calculate claimable amount
+     *
+     */
 
     function payout(uint8 _pid, address _addr)
         public
