@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("Migrations");
+const Staking = artifacts.require("Staking");
 
-module.exports = function (deployer) {
-  deployer.deploy(Migrations);
+module.exports = async (deployer) => {
+  await deployer.deploy(Staking);
 };
